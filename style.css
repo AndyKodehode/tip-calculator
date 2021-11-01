@@ -1,0 +1,152 @@
+
+body{
+    font-family: 'Space Mono';
+    background-color: hsl(187, 26%, 69%);
+    margin: 0;
+}
+
+.main-cont{
+    max-width: 365px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    height: 80%;
+    margin-top: 5rem;
+}
+
+/* WHITE SIDE*/
+
+.white-cont{
+    color: hsl(186, 14%, 43%);
+}
+
+input{
+    width: 95%;
+    padding: 0.5rem;
+    border-style: solid;
+
+}
+
+.tip-main-cont{
+    display:grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+}
+
+#five{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#ten{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#fiftheen{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#twentyfive{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.tip-cont{
+    width: 10rem;
+    background-color: hsl(183, 100%, 15%);
+    margin: 0.5rem;
+    padding: 0.6rem;
+    text-align: center;
+    color: white;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+#custom{
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+
+
+
+/* GREEN SIDE */
+.green-cont{
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.green-cont h5{
+    color: white;
+}
+
+.amount-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button{
+width: 100%;
+padding: 0.7rem;
+font-size: 18px;
+font-weight: 600;
+text-transform: uppercase;
+background-color: hsl(172, 67%, 45%); 
+color:hsl(183, 100%, 15%); 
+border-style: none;
+border-radius: 0.5rem;
+letter-spacing: 1px;
+margin-top: 1.5rem;
+
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h6{
+    margin-top: 0px;
+}
+
+@media(min-width: 600px){
+
+
+    .main-cont{
+        max-width: 1000px;
+        display: flex;
+        margin: auto;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .green-cont{
+        margin-left: 3rem;
+        width: 40%;
+    }
+
+    .white-cont{
+        margin-top: 5rem;
+        width: 60% ;
+    }
+
+    button{
+        margin-top: 2rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    .amount-cont h5{
+        padding-top: 1.5rem;
+    }
+}

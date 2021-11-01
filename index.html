@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <div class="main-cont">
+    <div class ="white-cont">
+        <h5>Bill </h5>
+        <input id="bill" type="text" >
+    
+        <h5>Select Tip %</h5>
+      <div class="tip-main-cont">
+        <button id="five" value= "0.05" class="tip-cont"> 5%</button>
+        <button id="ten" value= "0.1" class="tip-cont">10%</button>
+        <button id="fiftheen" value= "0.15" class="tip-cont">15%</button>
+        <button id="twentyfive" value = "0.25" class="tip-cont">25%</button>
+        <button id="fifty" value = "0.5" class="tip-cont">50%</button>
+        <button id="Custom" value = "0" class="tip-cont">Custom</button> 
+      </div>
+
+        <h5>Number of People</h5>
+        <input id="nr-people" type="text">
+    </div>
+
+    <div class="green-cont">
+
+      <div class="amount-cont">
+        <div>
+          <h5>Total</h5>
+        </div>
+      
+        <div>
+          <h2 id="total">$0.00</h2>
+        </div>
+      </div>
+
+      <div class="amount-cont">
+        <div>
+          <h5>Tip Total </h5> 
+        </div>
+      
+        <div>
+          <h2 id="tip">$0.00</h2>
+        </div>
+        
+      </div>
+
+      
+
+      <div class="amount-cont">
+        <div>
+          <h5>Cost</h5>
+          <h6>/ person</h6>
+        </div>
+      
+        <div>
+          <h2 id="total-person">$0.00</h2>
+        </div>
+      </div>
+
+      <div class="amount-cont">
+        <div>
+          <h5>Tip </h5> 
+          <h6>/ person</h6>
+        </div>
+       
+        <div>
+          <h2 id="tip-person">$0.00</h2>
+        </div>
+          
+        </div>
+       
+        <div>
+          <button id ="reset">Reset</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="attribution"> 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+   -->
+ <script src="secondScript.js"></script>
+</body>
+</html>
