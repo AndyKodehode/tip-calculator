@@ -18,50 +18,42 @@ let prosent
 let TotalWithProsent
 
 
-bill.addEventListener("input", CalcValues)
-bill.addEventListener("input", updateValues)
+bill.addEventListener("input", executeAll)
     
 
 
 tipProsent.addEventListener("click", function(e){
         prosent = e.target.value
-        CalcValues()
-        updateValues() 
-    
-    
-    //console.log(cost)
+        console.log(prosent)
+        executeAll()
 })
 
-NrPeople.addEventListener("input", CalcValues)
-NrPeople.addEventListener("input", updateValues)
+NrPeople.addEventListener("input", executeAll)
+
+function executeAll() {
+    CalcValues()
+    updateValues()
+}
 
 
 
-function CalcValues(e){
+function CalcValues(){
     // cost witout prosent//
-    cost = bill.value
-
-    console.log(bill.value)
-    
-    //cost without prosent pr pers//
+    cost = parseFloat(bill.value)
     people = NrPeople.value
-    individCost = parseFloat(cost)/ parseFloat(people)
-    individCost = Math.floor(individCost).toFixed(2)
-    
-    //cost with prosent//
-    
-    console.log(prosent)
-    tipCostAll = parseFloat(cost) * parseFloat(prosent)
-    tipCostAll = Math.floor(tipCostAll).toFixed(2)
-    TotalWithProsent = parseFloat(bill.value) + parseFloat(tipCostAll)
 
+    console.log('NrPeople.value: ' +NrPeople.value)
+    //cost without prosent pr pers//
+    individCost = cost / people
+    individCost = Math.floor(individCost)
+
+    tipCostAll = cost * parseFloat(prosent)
+    tipCostAll = Math.floor(tipCostAll)
+    TotalWithProsent = cost + parseFloat(tipCostAll)
     //cost pr person with prosent//
-    individTip = parseFloat(tipCostAll)/parseFloat(people) 
-    individTip = Math.floor(individTip).toFixed(2)
-    individCost = parseFloat(individTip)+ parseFloat(individCost)
-    
-
-    
+    individTip = tipCostAll/people
+    individTip = Math.floor(individTip)
+    individCost = individTip + individCost
 
 }
 
@@ -69,27 +61,22 @@ function CalcValues(e){
 
 function updateValues(){
     total.textContent = `$${cost}`
-    console.log(cost)
-    tip.textContent = `$${tipCostAll}`
-    costPerson.textContent = `$${individCost}`
+    tip.textContent = `$${tipCostAll.toFixed(2)}`
+    costPerson.textContent = `$${individCost.toFixed(2)}`
     tipPerson.textContent = `$${individTip}` 
     total.textContent = `$${TotalWithProsent}`
 
-    console.log(individTip, individCost)
-
-    if(individTip===NaN||Infinity){
+    if(individTip === Infinity || isNaN(individTip)){
         costPerson.textContent = `$0.00`
         tipPerson.textContent = `$0.00` 
     }
 
-    if(prosent===undefined){
+    if(prosent === undefined){
         total.textContent = `$${bill.value}`
+        tip.textContent = `$0.00`
     }
     
 }
-
-
-
 
 reset.addEventListener("click", function() {
     total.textContent= `$0.00`
@@ -98,5 +85,4 @@ reset.addEventListener("click", function() {
     tipPerson.textContent =  `$0.00`
     bill.value = ""
     NrPeople.value =""
-
 })
